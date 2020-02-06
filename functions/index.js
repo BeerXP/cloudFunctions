@@ -12,7 +12,15 @@ exports.createNewUser = functions.auth.user().onCreate((user) => {
 
   let db = admin.firestore();
   let userRef = db.collection('Users').doc(user.uid);
-  userRef.set({ name: nameUser, email: emailUser, createdAt: new Date(), updatedAt: new Date() });
+
+  userRef.set({
+    name: nameUser,
+    email: emailUser,
+    following: [],
+    followers: [],
+    createdAt: new Date(),
+    updatedAt: new Date()
+  });
 
 
   //functions.firestore.document('Users/{user.uid}').set({name: nameUser, email: emailUser});
