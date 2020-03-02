@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+    - node
+branches:
+    only:
+        - master
+script:
+    - echo "Skipping tests"
+deploy:
+    provider: firebase
+    skip_cleanup: true
+    edge: true
+    project: beerxp-dev
+    token:
+        secure: hic2TLB6/klgVBba/6+HplWLwdGnYF+Ox4JoQm274LdEkZzq1d26IqsGZLJ3v7C/2YnaBsPtCndrEcx0sMyN6y8JLh+MOjneDOJbn8CA/v+kREZ2MQKFL9KY3N1PSIzQId+BKQGKUVcSgfNBt9IF2V/nupJ4qZQTcPO+JhW0QKn3NCTa/11/czckwumlt5vDh+VcZZEQthgUJB/QKyILAlijRiCe570rDkbcS0kM2zhi+oOPn3QSmYBdqL7eLxhVWipsCCIAf/e29F+1MktOs6uxskERJ4nsx57aWW+bG5NIXDAqxYrpjWY29pUNmGGD8J8ovXpMeFesn6TI+5OFINq+kGUypL9PlIS6m033RVTfIDR8lbeMLXXwhjSu0eBsWH1URUQSe1NCeYh3RlRiq2f0m7pC3g6SyQeYGd5yPW5HQDaeLZYKnUbMH6lpAFPT4VdYAYxCqbyqVETWV7j/nB+F+g/ZBnkYc+DjIB2xHKq4HKJoJU3M446g33I6PF4jiyrw7QcHm6iQgYKGRjHrczBvpz7OqQPPefVC7yX0VOYFxcqXJIdHo5vdToHcEMAgL+9S309vScj4MJ+qAM9pKPk2SmHTjHL57l6m3gw9pGB+aW/EfKL9MK3oNwXRB4RZql7d37ltXnLFAQfu5TeM6niwHZJAT6yJSLL9sgLZ7EQ=
+notifications:
+    slack:
+        secure: KS2h2OOb/WPPn0l9DTYGAZNiYMH8VhmwOhvV99kKAoVLB7es4pxiv/FOc+j1c7u8BlYW9FmMXgW21sakEBAINvlOU7LNqER6iVlbSCMpsnkmlIeffyB26yfifNAcCDBVAGPb0NZGlws4pz7q79NCM9GbCTv1VIjfrnnyigq2rmoeN7mT+pih9sMdIFvjwXKGmPfUbtfYml4tw6nQpimN0RLmJ8NFZhkehoxccFCfunkt9phuwXOWb8ST8CsWQvqXFuP49/FTQJCzUQ6blViFYiUlvuj4WgqBfTaDIcCFndPQk3Jv4CrgLAIeu07lTCHY5Wnq5Y5CEHzNkMgy5GHdb5TYb0xXWa1G0dPWwo4dsLhk6WnXA6KFfR2SiK60I+Tu9TgYVYvn+NX/U2z57MhdXIRK5DGt2/L2RuUbJcWYuaag41WB2O6oQARQXWe3TTdDQi9+Orz2/YoH2plCr2KgaOwkDLJAn6YgBMRaL+mLdtc4IPvPMIONH1RwW4V/H/D6QsM9eXVLZwdC89jD1nEclAoc8kW0xSCwofSC2DyCOjtxN/zA043kca4/JVIIbFcVMY9FQWIg9FkfEtcHjULRygSkwi9i4A8ve5nlIUtp5Kze4IK/3/gQSTDkno6icqMq9Giafd//pgz6i/I7iRMT6kqaWbxuLbbnkDI30HHID00=
