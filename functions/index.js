@@ -1,29 +1,29 @@
 // The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
-const functions = require("firebase-functions");
+const functions = require('firebase-functions');
 
 // The Firebase Admin SDK to access the Firebase Realtime Database.
-const admin = require("firebase-admin");
+const admin = require('firebase-admin');
 admin.initializeApp();
 
 // ******* Users Auth() functions start **********
 
-exports.createNewUser = functions.auth.user().onCreate(user => {
+exports.createNewUser = functions.auth.user().onCreate((user) => {
 	const emailUser = user.email;
 	const nameUser = user.displayName;
 
 	let db = admin.firestore();
-	let userRef = db.collection("Users").doc(user.uid);
+	let userRef = db.collection('Users').doc(user.uid);
 
 	userRef.set({
 		uid: user.uid,
-		name: nameUser,
+		displayName: nameUser,
 		email: emailUser,
 		following: [],
 		followers: [],
 		drinkins: [],
 		badges: [],
 		createdAt: new Date(),
-		updatedAt: new Date()
+		updatedAt: new Date(),
 	});
 
 	return user;
@@ -51,7 +51,7 @@ exports.createNewUser = functions.auth.user().onCreate(user => {
 
 // Listen for changes in all documents in the 'Users' collection
 exports.updateUsers = functions.firestore
-	.document("Users/{userId}")
+	.document('Users/{userId}')
 	.onUpdate((change, context) => {
 		//     // Retrieve the current and previous value
 		const data = change.after.data();
@@ -60,7 +60,7 @@ exports.updateUsers = functions.firestore
 		//     // We'll only update if the name has changed.
 		//     // This is crucial to prevent infinite loops.
 		if (
-			data.name === previousData.name &&
+			data.displayName === previousData.displayName &&
 			data.email === previousData.email
 			// data.followers === previousData.followers &&
 			// data.following === previousData.following
@@ -77,14 +77,14 @@ exports.updateUsers = functions.firestore
 		//     // Then return a promise of a set operation to update the count
 		return change.after.ref.set(
 			{
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{ merge: true }
 		);
 	});
 
 exports.updateFollowing = functions.firestore
-	.document("Users/{userId}")
+	.document('Users/{userId}')
 	.onWrite((change, context) => {
 		// Retrieve the current and previous value
 		const data = change.after.data();
@@ -102,7 +102,7 @@ exports.updateFollowing = functions.firestore
 
 		// Valida se houve mudança dos seguidores
 		if (data.following !== previousData.following4) {
-			console.log("Data:", data.following);
+			console.log('Data:', data.following);
 		}
 
 		// firestore
