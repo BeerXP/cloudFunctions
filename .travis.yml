@@ -5,7 +5,11 @@ branches:
     only:
         - master
 script:
-    - echo "Skipping tests"
+    - cd functions
+    - npm install
+    - npm run lint
+    - npm run test
+    - cd ..
 deploy:
     provider: firebase
     skip_cleanup: true
