@@ -1,22 +1,23 @@
 language: node_js
 node_js:
-    - node
+- node
 branches:
-    only:
-        - master
+  only:
+  - master
 script:
-    - cd functions
-    - npm install
-    - npm run lint
-    - npm run test
-    - cd ..
+- cd functions
+- npm install
+- npm run lint
+- npm run test
+- cd ..
 deploy:
-    provider: firebase
-    skip_cleanup: true
-    edge: true
-    project: beerxp-dev
-    token:
-        secure: hic2TLB6/klgVBba/6+HplWLwdGnYF+Ox4JoQm274LdEkZzq1d26IqsGZLJ3v7C/2YnaBsPtCndrEcx0sMyN6y8JLh+MOjneDOJbn8CA/v+kREZ2MQKFL9KY3N1PSIzQId+BKQGKUVcSgfNBt9IF2V/nupJ4qZQTcPO+JhW0QKn3NCTa/11/czckwumlt5vDh+VcZZEQthgUJB/QKyILAlijRiCe570rDkbcS0kM2zhi+oOPn3QSmYBdqL7eLxhVWipsCCIAf/e29F+1MktOs6uxskERJ4nsx57aWW+bG5NIXDAqxYrpjWY29pUNmGGD8J8ovXpMeFesn6TI+5OFINq+kGUypL9PlIS6m033RVTfIDR8lbeMLXXwhjSu0eBsWH1URUQSe1NCeYh3RlRiq2f0m7pC3g6SyQeYGd5yPW5HQDaeLZYKnUbMH6lpAFPT4VdYAYxCqbyqVETWV7j/nB+F+g/ZBnkYc+DjIB2xHKq4HKJoJU3M446g33I6PF4jiyrw7QcHm6iQgYKGRjHrczBvpz7OqQPPefVC7yX0VOYFxcqXJIdHo5vdToHcEMAgL+9S309vScj4MJ+qAM9pKPk2SmHTjHL57l6m3gw9pGB+aW/EfKL9MK3oNwXRB4RZql7d37ltXnLFAQfu5TeM6niwHZJAT6yJSLL9sgLZ7EQ=
+  provider: firebase
+  cleanup: true
+  edge: true
+  project: beerxp
+  force: true
+  token:
+    secure: J8caJwrfLwdtSYYgkYT+XAixCcPGUhvzLdirwfBa4ArtiWQW6ZwHTPcQfbxnq00C4vIZDHPEyj3DKVHQyuLd+QZ6puzxQFu3HQewdNqqP1UzwI74Mf0tKHSZtAztfMUw3H77duRtz1GVXZx7/G/Rqcmvv3YEpfqV02RkH3BQNA/6ZtXC2s/djVo+XrxZVajuu0udTDZlyY+EUeReU6IFipED8EU7vLPI6VJTR3/I6VM5rhtN8TkKJ0CPvLpYO+FFLarDXYYxXolH9E5RBYV5ZoWQXINBuo9CvhcU4a1i4qSnmA2lFL2iGwmCsjugb5hGTxVZ/7TvzCiFa2Hda722+cyYqRiyMDxzX4qVoPDw5WIkM2DT6yCzQPR4vQ41wQlUL4YTzZBSOgsEv5URmm1GwE/n8jGIFCnwt8LUzm5iGO/0xZ4kPLbiz+lR3dvJ/jzDL3WAZ+NXYC/fr1bnMPFckEj0r5rUkt5eFAa6rysEYaVDNhbjWq7nKZ0bRtCYGGUyCmSaDQMSOJlm+qwaiwgHGfRKYmY5imvfkA4FJzZWITzSH3IHnhrQFUxGYV0rtiBoKJZVv14syj4ptP/cIEWWwd6d55q9sJMWaD0ldBo04yNoZdsYaiGxx+Yn+WLdle2x/DrvCMPlrcCxzGNlD+TO9aOFkDqal+w6AjJZdyTUZSI=
 notifications:
-    slack:
-        secure: KS2h2OOb/WPPn0l9DTYGAZNiYMH8VhmwOhvV99kKAoVLB7es4pxiv/FOc+j1c7u8BlYW9FmMXgW21sakEBAINvlOU7LNqER6iVlbSCMpsnkmlIeffyB26yfifNAcCDBVAGPb0NZGlws4pz7q79NCM9GbCTv1VIjfrnnyigq2rmoeN7mT+pih9sMdIFvjwXKGmPfUbtfYml4tw6nQpimN0RLmJ8NFZhkehoxccFCfunkt9phuwXOWb8ST8CsWQvqXFuP49/FTQJCzUQ6blViFYiUlvuj4WgqBfTaDIcCFndPQk3Jv4CrgLAIeu07lTCHY5Wnq5Y5CEHzNkMgy5GHdb5TYb0xXWa1G0dPWwo4dsLhk6WnXA6KFfR2SiK60I+Tu9TgYVYvn+NX/U2z57MhdXIRK5DGt2/L2RuUbJcWYuaag41WB2O6oQARQXWe3TTdDQi9+Orz2/YoH2plCr2KgaOwkDLJAn6YgBMRaL+mLdtc4IPvPMIONH1RwW4V/H/D6QsM9eXVLZwdC89jD1nEclAoc8kW0xSCwofSC2DyCOjtxN/zA043kca4/JVIIbFcVMY9FQWIg9FkfEtcHjULRygSkwi9i4A8ve5nlIUtp5Kze4IK/3/gQSTDkno6icqMq9Giafd//pgz6i/I7iRMT6kqaWbxuLbbnkDI30HHID00=
+  slack:
+    secure: pLDN9CBfbPTU+UzgHHNtza6Lk1YlyW3rltLMUmaj61HkBXs113FoaZNL4H5j3SMhiugksayvSaw/x9HvM5yCxXzN9hJ7NwvSg5MkkUtE20u3fcKa2//n8P+W2mXaKQuGt5M7PYSxZrGyozrEFsgVuUamIGBsV3QethaWacBl1tzApG5t6JRayc8B6+tjQNMSFc4+m7QtAalVgM3dbSE2//p4gKnJeHhMh9bBpXvxmdhDto89HYf1oBgdnTc+xEP3KSB/itBEPCLm/jYVkMi5gyGQC4ZzFGbJI9bocdbP6dYbRCyOWAwGyPw8cTeqhdh4MOW+gHuMknObE8+Ivgc16g6TfQyxhq2OLP3MuulxEuosC8i/nM/NK82SYR19xFeGPVvpYrTemF8ZUsx8ldqIzZivikgR3hqccVmy/HLnEOzYlKmfRX7iIH1rXCJ/FtF7LdKlIk0tZmbZ9TtZPsKt4u2GvoXCrKv/lK9H18EdS+F5Eb/jVvj7f9vHh+D90i200pCB1P6wetP1H/xSk1Q5zxFrkttuQc2NS4AySAVDEcbWgYIaqvoeUNp5k5GfhIOOyrM98AV5pHQ+GmMg0ZIcCukFCuQw3tX4P2qttjUzjZZvaJELH7L3JNtht3gE4tKTPjxWQ12wcSh5eNu+/5VWYPKCQyZdObRA8GmvdwD4ojQ=
