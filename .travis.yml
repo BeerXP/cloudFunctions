@@ -1,22 +1,22 @@
 language: node_js
 node_js:
-    - node
+- node
 branches:
-    only:
-        - master
+  only:
+  - master
 script:
-    - cd functions
-    - npm install
-    - npm run lint
-    - npm run test
-    - cd ..
+- cd functions
+- npm install
+- npm run lint
+- npm run test
+- cd ..
 deploy:
-    provider: firebase
-    edge: true
-    project: beerxp-dev
-    force: true
-    token:
-        secure: OVkmNvqqWIvs0ENmMFy/w7XvbGpJIfUrV01Lqn2xmIDK5hJg06dOZsPlPmq9J5Ec0+eEiNjNPc7bJZSE1ymGfN618yDhgAJxzj9lyHfUYBbpKCaAUE71NJPdMRQn41GQOajto8JHJcgeO93icRsKi2kvzoRBcX/7j9M8NTSkZZcMc6+mIVVkD2uAhJN8iiW/NpOHT6KGA1qxdc0EMaVKf4XrE9cYKf/3PNTL7ZjYHny10TXNJ0rzEtw13U3wVhopWjR5AwBa39gFuK//LQdssuX8vQYKlA1wmSWflr7LG6Jb7qLvBRt3DX6s1dqAfBEdNk5sfg3W+hTwO4gPAByw6riKlREhjdYir+a9JchzIKeoVGi69MMmgIM4ZcQjZcqlQnHemvyUAHdsOVnOG6Tz2g+iCMcj8gJv8KN02uJ9Tw+riRb4H3GzmrhLfBKRbfAi47Isoaxqox2FM9ZCsSNCQn1JFjquUSstQ6NatEU4xT06WkyF7gJciChMpOE6b7fFepp79MwSJsQbLsTymErRR7D+8Bi1CcNpEDg1ZfKn1miYNsUNTYWr4tjOtJTNj/l/LXMMtLSzgLcjlyV/lFeNF25JuvJz3gO6gH4DGyYQr9KzMxyQnZ1MZD1GN+vmHKAYm5E/KTtxn8LQkfeSHLisc5d9hls0mcik/SvUICqn+Dg=
+  provider: firebase
+  edge: true
+  project: beerxp-dev
+  force: true
+  token:
+    secure: xif5B7w7Oj18bwwKJJGNFVN4Ek3X53/S1UIVVuKo1jw5mrOOjiEL/1OJsd1FhCRtR5EnWGmK5BaMxsM/u8r0hYoFmec06MNoWKFWXLgfW9yJVOsXvVM96vIc6p0q46NzU/NeqS9r3osvDFZKII8jgTwpZAwXz11uS11E6URd8RgZSDYqFKhMWaWq9spEBzBZzvhnTowy2QIYT7bxS+A0lNVifLAyuPtVvrxkeQ073mqeNPLr4cQcXgMOrwF1nv2qH23U2wrD0U9N36IAEHe8RUA/qVgqaBuZsNl4ueWxmA8gf484l6sd8mKPv1fBNreVYcrgJxglLZZ6mqZzL3w41IIdyDZS25WupSDqFKS4YTKCfqj9bKl+ZZR6/+EPfUeuCGRgqNVpuFbdcWO0JFtsPpcwW228o2fLMCYdCD5TImfQpbZrEszfG+x5+2Ud1falBOVMGaOhC54QuUvCYSSetFMtDeqtOiZBNWdPMbUubrp+y6rKqwnv6kvsf9N4asfqRgfQAIJfle/Y4bLSOsybFp50BGtqgjNYsi5nHKJi6ZI633wYO8R6gtUhzl/sJXvPzSGUp6F1Rws1H8sB1+TKfMxK7VaBNgI6fjAArktuyAPYbrdpvgtf8nUE2tKmLwdjVGJEgGMlg4HgWR222P/nviJVSq/e6h0p1wxlyU/YNkk=
 notifications:
-    slack:
-        secure: pLDN9CBfbPTU+UzgHHNtza6Lk1YlyW3rltLMUmaj61HkBXs113FoaZNL4H5j3SMhiugksayvSaw/x9HvM5yCxXzN9hJ7NwvSg5MkkUtE20u3fcKa2//n8P+W2mXaKQuGt5M7PYSxZrGyozrEFsgVuUamIGBsV3QethaWacBl1tzApG5t6JRayc8B6+tjQNMSFc4+m7QtAalVgM3dbSE2//p4gKnJeHhMh9bBpXvxmdhDto89HYf1oBgdnTc+xEP3KSB/itBEPCLm/jYVkMi5gyGQC4ZzFGbJI9bocdbP6dYbRCyOWAwGyPw8cTeqhdh4MOW+gHuMknObE8+Ivgc16g6TfQyxhq2OLP3MuulxEuosC8i/nM/NK82SYR19xFeGPVvpYrTemF8ZUsx8ldqIzZivikgR3hqccVmy/HLnEOzYlKmfRX7iIH1rXCJ/FtF7LdKlIk0tZmbZ9TtZPsKt4u2GvoXCrKv/lK9H18EdS+F5Eb/jVvj7f9vHh+D90i200pCB1P6wetP1H/xSk1Q5zxFrkttuQc2NS4AySAVDEcbWgYIaqvoeUNp5k5GfhIOOyrM98AV5pHQ+GmMg0ZIcCukFCuQw3tX4P2qttjUzjZZvaJELH7L3JNtht3gE4tKTPjxWQ12wcSh5eNu+/5VWYPKCQyZdObRA8GmvdwD4ojQ=
+  slack:
+    secure: pLDN9CBfbPTU+UzgHHNtza6Lk1YlyW3rltLMUmaj61HkBXs113FoaZNL4H5j3SMhiugksayvSaw/x9HvM5yCxXzN9hJ7NwvSg5MkkUtE20u3fcKa2//n8P+W2mXaKQuGt5M7PYSxZrGyozrEFsgVuUamIGBsV3QethaWacBl1tzApG5t6JRayc8B6+tjQNMSFc4+m7QtAalVgM3dbSE2//p4gKnJeHhMh9bBpXvxmdhDto89HYf1oBgdnTc+xEP3KSB/itBEPCLm/jYVkMi5gyGQC4ZzFGbJI9bocdbP6dYbRCyOWAwGyPw8cTeqhdh4MOW+gHuMknObE8+Ivgc16g6TfQyxhq2OLP3MuulxEuosC8i/nM/NK82SYR19xFeGPVvpYrTemF8ZUsx8ldqIzZivikgR3hqccVmy/HLnEOzYlKmfRX7iIH1rXCJ/FtF7LdKlIk0tZmbZ9TtZPsKt4u2GvoXCrKv/lK9H18EdS+F5Eb/jVvj7f9vHh+D90i200pCB1P6wetP1H/xSk1Q5zxFrkttuQc2NS4AySAVDEcbWgYIaqvoeUNp5k5GfhIOOyrM98AV5pHQ+GmMg0ZIcCukFCuQw3tX4P2qttjUzjZZvaJELH7L3JNtht3gE4tKTPjxWQ12wcSh5eNu+/5VWYPKCQyZdObRA8GmvdwD4ojQ=
