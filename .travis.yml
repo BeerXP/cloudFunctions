@@ -11,11 +11,12 @@ script:
     - npm run test
     - cd ..
 deploy:
-    # provider: firebase
-    # edge: false
-    # project: beerxp-prd
-    # force: true
-    - firebase deploy --non-interactive --project="beerxp-prd" --token=$TOKEN --force
+    provider: firebase
+    edge: true
+    project: beerxp-prd
+    force: true
+after_deploy:
+    - firebase deploy --non-interactive --project="beerxp-prd" --token=${TOKEN} --force
     # token:
     # secure: dYE/IuWhx7MCAndw10PldDjWVsCSj+NIjCS29FnRgXYFNey9rOQfS9Ggj0IgpPocvno5smfh2XIzV+ExB2mVgLrP8g/geIkLgSwkPuuCPB7+/efePaCv/kFMJ6aH+OCo2NzhzlCFILg4+Y3aUhd5m55liQqzrQL1G3CXzzMgRyTX6Ny95/ClVYRsJmTz/cNhQzxD1ypUzVWB2BUebbSMDbfFZhlW3Tr3brvKztXeX/ffqZaMjQhcTQuWYn9+yw5UktUiBJ7q2rotz/CHqgQ3TqTLC8W1ZH7d1+xvlTqDKohFXqzUo33g6bS3b75Tqw2ufU0dH8oMgamhUoONtEikkcPRvxR2/r8xMf1MPq7YBK5Ylzth983OciC6lRbHUrqvomQLk1iE0n9FA287xOAwbWQZVa3P8bfuII0nOzMf2vShrM5nRKiLCciz5bZetP1T0xXMkZ6F8f+xrUcLxQtUS8pDof4CGEagsFC9a9LcqkvidAA7eQdIDYBBvqRw/guXKyqXk+DE+DLi0x0Hs/8tqn3XDHjweEtO7lPSEFnWdKUP2Klt8DVMGbL7kZTXm371HE79hLJCDONDBYaVvM1x0tsB/QIFVMfWRBW/v+tDvmgVMPpN6F8kZG5dk5UOrZMSu5zqlxNOnjXeB6/YkYaSawFKhI92Ysx6UVuVGF30tEA=
 notifications:
