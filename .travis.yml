@@ -7,13 +7,13 @@ branches:
     only:
         - master
 script:
-    - CI=false
+    - rm -rf node_modules
     - cd functions
+    - rm -rf node_modules
     - npm install
     - npm run lint
     - npm run test
     - cd ..
-    - CI=false
 before_deploy:
     - ls -lap
     - CI=false
