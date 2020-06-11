@@ -17,7 +17,7 @@ deploy:
     provider: firebase
     cleanup: false
     skip_cleanup: true
-    # edge: true
+    edge: true
     project: beerxp-prd
     # force: true
     # after_deploy:
