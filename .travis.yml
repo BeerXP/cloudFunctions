@@ -5,12 +5,12 @@ branches:
     only:
         - master
 script:
+    - CI=false
     - cd functions
     - npm install
     # - npm run lint
     # - npm run test
     - cd ..
-    - CI=false
 before_deploy:
     - ls -lap
 deploy:
