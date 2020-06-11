@@ -8,8 +8,8 @@ script:
     - CI=false
     - cd functions
     - npm install
-    # - npm run lint
-    # - npm run test
+    - npm run lint
+    - npm run test
     - cd ..
 deploy:
     provider: firebase
