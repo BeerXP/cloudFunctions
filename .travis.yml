@@ -10,10 +10,7 @@ script:
     - npm install
     # - npm run lint
     # - npm run test
-    - ls -lap
     - cd ..
-before_deploy:
-    - ls -lap
 deploy:
     provider: firebase
     cleanup: false
