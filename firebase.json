@@ -1,5 +1,8 @@
 {
 	"functions": {
-		"predeploy": []
+		"predeploy": [
+			"npm --prefix \"functions\" run lint",
+			"npm --prefix \"functions\" run build"
+		]
 	}
 }
