@@ -10,16 +10,16 @@ script:
     - npm install
     # - npm run lint
     # - npm run test
+    - ls -lap
     - cd ..
 before_deploy:
     - ls -lap
 deploy:
     provider: firebase
     cleanup: false
-    skip_cleanup: true
     edge: true
-    project: beerxp-prd
-    # force: true
+    # project: beerxp-prd
+    force: true
     # after_deploy:
     # - firebase deploy --non-interactive --project="beerxp-prd" --token $FIREBASE_TOKEN --force
     token:
