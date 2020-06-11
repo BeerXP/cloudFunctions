@@ -13,7 +13,7 @@ script:
     - CI=false
 deploy:
     provider: firebase
-    edge: true
+    # edge: true
     project: beerxp-prd
     force: true
     cleanup: false
