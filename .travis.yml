@@ -13,10 +13,10 @@ script:
     - cd ..
 deploy:
     provider: firebase
-    cleanup: false
-    edge: true
+    # cleanup: false
+    # edge: true
     # project: beerxp-prd
-    force: true
+    # force: true
     # after_deploy:
     # - firebase deploy --non-interactive --project="beerxp-prd" --token $FIREBASE_TOKEN --force
     token:
