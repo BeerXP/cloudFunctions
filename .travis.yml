@@ -6,6 +6,13 @@ os:
 branches:
     only:
         - master
+
+addons:
+    sonarcloud:
+        organization: 'beerxp'
+        token:
+            secure: 'NlDhYuWrkuaseRnhCXVotS7q9ekRfChj7rFWZm9zxlyytLHcd62ieKqLdPSkUM6nVb0uc4tb7vpb7Opr+bvPoyfQlAjy3Vt5cxQHNYjCJT+MbuWqzNRJGMEjf1NuGRfWk4YPa5Q+RgFI5HDgz8Jn/2JtE/iPm1Iazah74XEAlC0RWH619SxITFnoOC3EvO17m5vuwgVv+EaZTu5ht9l/NvVyP5f0snKZpa4Xw1On50P513EB2ofuuLZFzkmvCWV4Q520LLKIXsefrkdJnjD2BYlJfnuxIGV19KgUBq9tleUYQzMTK+iyDbeg6kSiU4lYs0srlVRv+CS2nTCtayuPSVeZT31C1mglJPNQRD4EhuHBG83bZejNAjoJAHXT9hZUNVe8T+ThrZbfYORfiSasXmVCWRgDEb39x4xsGIwTj5KSkahWFGcdv+XQxVl7Iue2inSXTKqI3OMq7Jp5ttkxY4TnEVo6ouCIEQ3LMeG0UBbYggpq/3blX8PXEr/p0Fa04AfOLIOfpQ9RyiLdHRXncxsODXXFP0n2RdcdsAVnnkHJd+KEGB5eBvX6fc6xo9OTMUB9AKEu8gtn/SyKDtZaZh4BVlAwQRm0rkG5G6fhdBydDm3RgloVfhVm3zIbISxBonKrjfuhK+IbUWiMjdoXpZ4XgG3ZLG5bN2nbv8ktcPc=' # encrypted value of your token
+
 script:
     - rm -rf node_modules
     - cd functions
@@ -14,6 +21,7 @@ script:
     - npm run lint
     - npm run test
     - cd ..
+    - sonar-scanner
 install:
     - npm install -g firebase-tools
 before_deploy:
