@@ -11,7 +11,8 @@
 		"SharedArrayBuffer": "readonly"
 	},
 	"parserOptions": {
-		"ecmaVersion": 2018
+		// Required for certain syntax usages
+		"ecmaVersion": 2019
 	},
 	"plugins": ["promise"],
 	"rules": {
