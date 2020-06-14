@@ -7,3 +7,6 @@ Repositório destinado ao versionamento do Cloud Functions
 [![CodeFactor](https://www.codefactor.io/repository/github/beerxp/cloudfunctions/badge)](https://www.codefactor.io/repository/github/beerxp/cloudfunctions)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4a5747e36ab642caa05a3b1d802f98c8)](https://app.codacy.com/gh/BeerXP/cloudFunctions?utm_source=github.com&utm_medium=referral&utm_content=BeerXP/cloudFunctions&utm_campaign=Badge_Grade_Dashboard)
 [![Known Vulnerabilities](https://snyk.io/test/github/BeerXP/cloudFunctions/badge.svg)](https://snyk.io/test/github/BeerXP/cloudFunctions/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0d522a6b61a2d88922b2/maintainability)](https://codeclimate.com/github/BeerXP/cloudFunctions/maintainability)
+![GitHub issues](https://img.shields.io/github/issues-raw/BeerXP/cloudFunctions)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/BeerXP/cloudFunctions)
