@@ -8,52 +8,31 @@ FieldValue = require('firebase-admin').firestore.FieldValue;
 exports.updateFollowers = functions.firestore
 	.document('Users/{userId}/following/{followindUserId}')
 	.onWrite((change, context) => {
-		var docRef = db
+		// Variável que grava o ID do novo seguidor
+		var newFollower = db
 			.collection('Users')
 			.doc(context.params.followindUserId)
 			.collection('followers')
 			.doc(context.params.userId);
+		//Variável que atualiza o contador de following
+		var newFollowingCount = db
+			.collection('Users')
+			.doc(context.params.userId);
+		//Variável que atualiza o contador de followers
+		var newFollowerCount = db
+			.collection('Users')
+			.doc(context.params.followindUserId);
 		if (!change.before.exists) {
 			// New document Created : add new follower
-			docRef.set({ uid: context.params.userId });
-		} else if (change.before.exists && change.after.exists) {
+			newFollower.set({ uid: context.params.userId });
+			newFollowingCount.update({ following: FieldValue.increment(1) });
+			newFollowerCount.update({ followers: FieldValue.increment(1) });
+			// } else if (change.before.exists && change.after.exists) {
 			// Updating existing document : Do nothing
 		} else if (!change.after.exists) {
 			// Deleting document : delete the follower
-			docRef.delete();
+			newFollowingCount.update({ following: FieldValue.increment(-1) });
+			newFollowerCount.update({ followers: FieldValue.increment(-1) });
+			newFollower.delete();
 		}
-	});
-
-// Atualiza o count de seguindo
-exports.updateFollowingCount = functions.firestore
-	.document('Users/{userId}/following/{followindUserId}')
-	.onWrite((change, context) => {
-		var docRef = db.collection('Users').doc(context.params.userId);
-		if (!change.before.exists) {
-			// New document Created : add one to count
-			docRef.update({ following: FieldValue.increment(1) });
-		} else if (change.before.exists && change.after.exists) {
-			// Updating existing document : Do nothing
-		} else if (!change.after.exists) {
-			// Deleting document : subtract one from count
-			docRef.update({ following: FieldValue.increment(-1) });
-		}
-		return;
-	});
-
-// Atualiza o count de seguidores
-exports.updateFollowersCount = functions.firestore
-	.document('Users/{userId}/following/{followindUserId}')
-	.onWrite((change, context) => {
-		var docRef = db.collection('Users').doc(context.params.followindUserId);
-		if (!change.before.exists) {
-			// New document Created : add one to count
-			docRef.update({ followers: FieldValue.increment(1) });
-		} else if (change.before.exists && change.after.exists) {
-			// Updating existing document : Do nothing
-		} else if (!change.after.exists) {
-			// Deleting document : subtract one from count
-			docRef.update({ followers: FieldValue.increment(-1) });
-		}
-		return;
 	});
