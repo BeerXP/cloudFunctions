@@ -1,14 +1,27 @@
 {
+	"env": {
+		"commonjs": true,
+		"es6": true,
+		"node": true,
+		"browser": false
+	},
+	"extends": "eslint:recommended",
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
 	"parserOptions": {
-		// Required for certain syntax usages
-		"ecmaVersion": 2019
+		"ecmaVersion": 2018
 	},
 	"plugins": ["promise"],
-	"extends": "eslint:recommended",
 	"rules": {
+		"indent": ["error", "tab"],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+
 		// Removed rule "disallow the use of console" from recommended eslint rules
 		"no-console": "off",
-
 		// Removed rule "disallow multiple spaces in regular expressions" from recommended eslint rules
 		"no-regex-spaces": "off",
 
