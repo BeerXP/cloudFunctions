@@ -3,7 +3,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const db = admin.firestore();
-FieldValue = require('firebase-admin').firestore.FieldValue;
 
 // Envia push notification informando que existe um novo seguidor
 exports.sendPushNotifications = functions.firestore

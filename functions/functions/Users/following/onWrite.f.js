@@ -2,7 +2,7 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const db = admin.firestore();
-FieldValue = require('firebase-admin').firestore.FieldValue;
+const FieldValue = require('firebase-admin').firestore.FieldValue;
 
 // Cria o usuário nos seguidores de quem acabou de ser seguido
 exports.updateFollowers = functions.firestore
