@@ -1,20 +1,8 @@
 /* eslint-disable promise/catch-or-return */
 // The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
 const functions = require('firebase-functions');
-
 const admin = require('firebase-admin');
 const db = admin.firestore();
-
-// Cria o usuário nos seguidores de quem acabou de ser seguido
-exports.updateFollowers = functions.firestore
-	.document('Users/{userId}/following/{followindUserId}')
-	.onCreate((change, context) => {
-		db.collection('Users')
-			.doc(context.params.followindUserId)
-			.collection('followers')
-			.doc(context.params.userId)
-			.set({ uid: context.params.userId });
-	});
 
 // Envia push notification informando que existe um novo seguidor
 exports.sendPushNotifications = functions.firestore
