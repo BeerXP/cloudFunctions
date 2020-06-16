@@ -7,7 +7,6 @@ const db = admin.firestore();
 exports.createNewUser = functions.auth.user().onCreate((user) => {
 	const emailUser = user.email;
 	const nameUser = user.displayName;
-	let db = admin.firestore();
 
 	let userRef = db.collection('Users').doc(user.uid);
 	userRef.set({
