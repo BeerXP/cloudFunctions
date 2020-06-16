@@ -14,7 +14,7 @@ exports.updateAuthOnUpdate = functions.firestore
 			data.phoneNumber === previousData.phoneNumber &&
 			data.photoURL === previousData.photoURL
 		)
-			return null;
+			return;
 
 		admin
 			.auth()
@@ -25,11 +25,10 @@ exports.updateAuthOnUpdate = functions.firestore
 				photoURL: data.photoURL,
 			})
 			.then((user) => {
-				console.log('Successfully updated user', user.toJSON());
 				return user;
 			})
 			.catch((error) => {
 				console.log('Error updating user:', error);
+				return null;
 			});
-		return null;
 	});
