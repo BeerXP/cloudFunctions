@@ -17,7 +17,7 @@
   "dependencies": {
     "firebase-admin": "^9.2.0",
     "firebase-functions": "^3.9.0",
-    "snyk": "^1.389.0"
+    "snyk": "^1.391.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
