@@ -19,7 +19,7 @@ script:
     - rm -rf node_modules
     - npm install
     - npm run lint
-    - npm run test
+    # - npm run test
     - cd ..
     - sonar-scanner
 install:
